@@ -33,6 +33,7 @@ int main()
     }
 
     SDL_Surface* surface = IMG_Load("back.png");
+    SDL_Surface* serpent = IMG_Load("Snake_body.png");
     if (surface == NULL) 
     {
         printf("Error loading image %s\n", IMG_GetError());
