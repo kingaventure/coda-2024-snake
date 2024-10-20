@@ -176,6 +176,7 @@ int main() {
       int new_x = Snake->x + (direction_x * speed);
       int new_y = Snake->y + (direction_y * speed);
       if (new_x < 32 || new_x >= 768 || new_y < 32 || new_y >= 768) {
+        printf("le serpent c'est mangé un mur !\n");
         SDL_Quit();
         exit(0);
       }    
@@ -193,6 +194,15 @@ int main() {
       previous_x = current_x;
       previous_y = current_y;
       tmp = tmp->next;
+      serpent *tmp = Snake->next;
+      while (tmp != NULL) {
+      if (Snake->x == tmp->x && Snake->y == tmp->y) {
+        printf("le serpent c'est mordu\n");
+        SDL_Quit();
+        exit(0);
+      }
+      tmp = tmp->next;
+}
       }
 
       if (Snake->x == fruit_pos.x && Snake->y == fruit_pos.y) {
